@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 11:25:37 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/21 18:21:35 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/21 19:28:23 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,11 @@ void	ft_echo(char *str, t_mini *data)
 	if (data->flag == 2)
 		return ;
 	temp = ft_echo_parser(str, data->e_skip, 0, data);
+	if (ft_strnequ(temp, "echo", 4) == 1)
+	{
+		free(temp);
+		return ;
+	}
 	if (temp)
 	{
 		i = ft_check_start(temp);
