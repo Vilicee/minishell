@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:11:33 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/21 18:22:09 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/22 12:19:28 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,11 @@ char				*ft_get_next_command(char *str, int i, char quote,
 char				*ft_extract_env_value(char **variables, char *word);
 char				*ft_extract_command_path(char **variables, char *word,
 						char *command, t_mini *dt);
-
 char				*ft_read_until_matching_quote(char *str);
 char				**ft_copy_env(void);
 char				**ft_adhoc_split(char const *str, char c, int len, int i);
 char				**ft_path_parser(char *str, char c);
-int					ft_which_command(char *str, t_mini *data, char *temp,
-						char *word);
+int					ft_which_command(char *str, t_mini *data, char *word);
 int					ft_shell(t_mini *data);
 int					ft_check_echo_flag(char *str, int i);
 int					ft_dollar_check(char *str, int i, char quote);

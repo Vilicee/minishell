@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 11:25:37 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/22 11:58:18 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/22 12:10:36 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,15 @@
 
 static int	ft_check_for_parse_errors(char *str)
 {
-	if (ft_strnequ(str, "echo", 4) == 1)
+	if (ft_is_quote(str[0]) == 1)
+	{
+		if (ft_strnequ(str, "\"echo\"", 6) == 1)
+		{
+			free(str);
+			return (-1);
+		}
+	}
+	else if (ft_strnequ(str, "echo", 4) == 1)
 	{
 		free(str);
 		return (-1);
