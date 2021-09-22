@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 14:40:54 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/22 12:18:10 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/22 12:55:36 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,9 @@ static int	ft_not_empty(char *str)
 	int	i;
 
 	i = 0;
+	if (ft_is_quote(str[0]) == 1)
+		if (ft_strlen(str) == 2 || ft_is_quote(str[1]) == 1)
+			return (1);
 	while (str[i])
 	{
 		if (ft_isspace(str[i]) == 0)
