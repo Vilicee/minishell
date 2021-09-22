@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 14:40:54 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/22 12:55:36 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/22 13:19:49 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,8 @@ static char	**ft_parser(t_mini *data)
 	return (ret);
 }
 
-static int	ft_not_empty(char *str)
+static int	ft_not_empty(char *str, int i)
 {
-	int	i;
-
-	i = 0;
 	if (ft_is_quote(str[0]) == 1)
 		if (ft_strlen(str) == 2 || ft_is_quote(str[1]) == 1)
 			return (1);
@@ -109,7 +106,7 @@ int	ft_shell(t_mini *data)
 	{
 		while (data->words[data->i] != NULL)
 		{
-			if (ft_not_empty(data->words[data->i]) == 0)
+			if (ft_not_empty(data->words[data->i], 0) == 0)
 			{
 				ft_which_command(data->words[data->i], data, NULL);
 				ft_reset_variables(data);
