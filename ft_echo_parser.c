@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 13:16:38 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/22 13:34:31 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/22 13:53:39 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_almost_white_space(char c)
 	return (0);
 }
 
-static int	ft_skip_flag(char *str, int i, int count)
+static int	ft_skip_flag(char *str, int i, int ii, int count)
 {
 	while (str[i])
 	{
@@ -31,21 +31,21 @@ static int	ft_skip_flag(char *str, int i, int count)
 			if (ft_isspace(str[i]) == 1 || str[i] == '\0')
 				count++;
 		}
+		if (ft_isspace(str[i]) == 0 && str[i] != 'n')
+			break ;
 		i++;
 	}
-	i = 0;
-	while (count > 0)
+	while (count > 0 && str[ii++])
 	{
-		if (str[i] == '-')
+		if (str[ii] == '-')
 		{
-			i++;
-			while (str[i] == 'n')
-				i++;
+			ii++;
+			while (str[ii] == 'n')
+				ii++;
 			count--;
 		}
-		i++;
 	}
-	return (i);
+	return (ii);
 }
 
 static int	ft_echo_len(char *str, int i, int flag, t_mini *data)
@@ -56,7 +56,7 @@ static int	ft_echo_len(char *str, int i, int flag, t_mini *data)
 	len = 0;
 	arg = 0;
 	if (flag == 1)
-		i = ft_skip_flag(str, 0, 0);
+		i = ft_skip_flag(str, ft_find_echo_start(str), 0, 0);
 	while (str[i])
 	{
 		if ((ft_almost_white_space(str[i]) == 1) && arg == 0)

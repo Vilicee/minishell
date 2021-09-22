@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:11:33 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/22 12:55:31 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/22 13:43:51 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int					ft_dotdot_slash(char **array, t_mini *data, char *current);
 int					ft_check_path(char *str);
 int					ft_check_dot(char *str);
 int					ft_is_quote(char c);
+int					ft_find_echo_start(char *str);
 int					ft_new_dir(char **array, t_mini *data);
 int					ft_execve(char *str, t_mini *data, char *command);
 int					ft_dollar(char *temp, int i, char c, char **variables);

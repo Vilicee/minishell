@@ -6,7 +6,7 @@
 #    By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/06 13:58:33 by wvaara            #+#    #+#              #
-#    Updated: 2021/09/21 18:23:13 by wvaara           ###   ########.fr        #
+#    Updated: 2021/09/22 13:44:05 by wvaara           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = main.c ft_shell.c ft_echo.c ft_read_until_matching_quote.c \
 	ft_check_start.c ft_command_not_found.c ft_is_quote.c ft_ignore.c \
 	ft_get_next_command.c ft_dollar_check.c ft_check_echo_flag.c \
 	ft_echo_parser.c ft_command_parser.c ft_cd_parser.c ft_new_dir.c \
-	ft_adhoc_split.c
+	ft_adhoc_split.c ft_find_echo_start.c
 
 OBJECTS = $(SRCS:.c=.o)
 
