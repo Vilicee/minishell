@@ -6,11 +6,21 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 11:25:37 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/21 19:28:23 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/22 11:58:18 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minishell.h"
+
+static int	ft_check_for_parse_errors(char *str)
+{
+	if (ft_strnequ(str, "echo", 4) == 1)
+	{
+		free(str);
+		return (-1);
+	}
+	return (0);
+}
 
 static int	ft_no_quote(char *str, int i, char quote, char **variables)
 {
@@ -21,7 +31,7 @@ static int	ft_no_quote(char *str, int i, char quote, char **variables)
 	return (i);
 }
 
-static void	ft_print_echo(char *str, int i, char quote, char **variables)
+static void	ft_print_echo(char *str, int i, char quote, t_mini *data)
 {
 	while (str[i])
 	{
@@ -31,7 +41,7 @@ static void	ft_print_echo(char *str, int i, char quote, char **variables)
 			while (str[i] != quote)
 			{
 				if (ft_dollar_check(str, i, quote) == 1)
-					i = ft_dollar(str, i, quote, variables);
+					i = ft_dollar(str, i, quote, data->variables);
 				else
 					i = ft_write(str, i, quote);
 				if (str[i] == quote && str[i - 1] == '\\')
@@ -42,8 +52,10 @@ static void	ft_print_echo(char *str, int i, char quote, char **variables)
 		else if (str[i] == ' ' && str[i + 1] == ' ')
 			i++;
 		else
-			i = ft_no_quote(str, i, quote, variables);
+			i = ft_no_quote(str, i, quote, data->variables);
 	}
+	if (data->flag == 0)
+		write(1, "\n", 1);
 }
 
 void	ft_echo(char *str, t_mini *data)
@@ -64,17 +76,12 @@ void	ft_echo(char *str, t_mini *data)
 	if (data->flag == 2)
 		return ;
 	temp = ft_echo_parser(str, data->e_skip, 0, data);
-	if (ft_strnequ(temp, "echo", 4) == 1)
-	{
-		free(temp);
+	if (ft_check_for_parse_errors(temp) == -1)
 		return ;
-	}
 	if (temp)
 	{
 		i = ft_check_start(temp);
-		ft_print_echo(temp, i, 'a', data->variables);
+		ft_print_echo(temp, i, 'a', data);
 		free(temp);
 	}
-	if (data->flag == 0)
-		write(1, "\n", 1);
 }
