@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 13:16:38 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/21 18:12:27 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/22 13:34:31 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,13 @@ static int	ft_skip_flag(char *str, int i, int count)
 	while (str[i])
 	{
 		if (str[i] == '-' && str[i + 1] == 'n')
-			count++;
+		{
+			i++;
+			while (str[i] == 'n')
+				i++;
+			if (ft_isspace(str[i]) == 1 || str[i] == '\0')
+				count++;
+		}
 		i++;
 	}
 	i = 0;
