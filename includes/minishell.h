@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:11:33 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/24 17:26:29 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/24 21:04:06 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_mini
 	int				e_skip;
 	int				link_flag;
 	int				ret;
+	char			tilde;
 	char			exec_fail;
 	char			quote;
 	char			cd_l;

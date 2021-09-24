@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 10:57:37 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/15 14:59:46 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/24 21:07:52 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,26 +43,26 @@ static int	ft_else(char **array, t_mini *data, char tilde, int ret)
 
 int	ft_new_dir(char **array, t_mini *data)
 {
-	char		tilde;
-
-	tilde = '0';
 	if (array[1])
 	{
 		lstat(array[1], &data->stats);
 		if (array[1][0] == '~')
 		{
-			tilde = '1';
+			data->tilde = '1';
 			data->env = ft_extract_env_value(data->variables, "HOME");
 			data->check = ft_strjoin(data->env, ++array[1]);
 			if (data->stats.st_mode & S_IFLNK)
-				data->new = ft_is_link(data, array, tilde);
-			else
-				data->new = ft_strjoin("setenv PWD ", data->check);
+			{
+				data->new = ft_is_link(data, array, data->tilde);
+				data->tilde = '0';
+			}
+//			else
+//				data->new = ft_strjoin("setenv PWD ", data->check);
 			array[1]--;
 			return (chdir(data->check));
 		}
 		else
-			return (ft_else(array, data, tilde, 0));
+			return (ft_else(array, data, data->tilde, 0));
 	}
 	return (-1);
 }

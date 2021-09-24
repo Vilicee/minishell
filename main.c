@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 15:59:48 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/21 16:23:55 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/24 21:04:50 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void	ft_initialize(t_mini *data)
 	data->quote = ' ';
 	data->cd_p = '0';
 	data->cd_l = '0';
+	data->tilde = '0';
 }
 
 static void	ft_reset(t_mini *data)
@@ -44,6 +45,7 @@ static void	ft_reset(t_mini *data)
 	data->ret = 0;
 	data->cd_p = '0';
 	data->cd_l = '0';
+	data->tilde = '0';
 	data->quote = ' ';
 }
 

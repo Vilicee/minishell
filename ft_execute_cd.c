@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 13:51:40 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/15 16:08:58 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/24 21:07:04 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,15 @@ static void	ft_free(t_mini *data)
 
 static	void	ft_set_env_vars(t_mini *data)
 {
+	char	current[4096];
+
 	if (data->old)
 		ft_setenv(data->old, data, 1);
+	if (data->tilde == '1')
+	{
+		getcwd(current, sizeof(current));
+		data->new = (ft_strjoin("setend PWD ", current));
+	}
 	if (data->new)
 		ft_setenv(data->new, data, 1);
 }
