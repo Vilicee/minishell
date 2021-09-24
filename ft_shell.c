@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 14:40:54 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/22 13:19:49 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/24 17:16:21 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,9 +106,10 @@ int	ft_shell(t_mini *data)
 	{
 		while (data->words[data->i] != NULL)
 		{
+			ft_printf("data->words[data->i] = (%s)", data->words[data->i]);
 			if (ft_not_empty(data->words[data->i], 0) == 0)
 			{
-				ft_which_command(data->words[data->i], data, NULL);
+				ft_which_command(data->words[data->i], data, NULL, NULL);
 				ft_reset_variables(data);
 			}
 			data->i++;
