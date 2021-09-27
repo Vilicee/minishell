@@ -56,8 +56,6 @@ int	ft_new_dir(char **array, t_mini *data)
 				data->new = ft_is_link(data, array, data->tilde);
 				data->tilde = '0';
 			}
-//			else
-//				data->new = ft_strjoin("setenv PWD ", data->check);
 			array[1]--;
 			return (chdir(data->check));
 		}
