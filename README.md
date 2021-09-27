@@ -27,6 +27,7 @@ To launch the program;
 2. make
 3. ./minishell
 4. Voila, you're now using my basic version of a shell.
+5. To exit the program, you can just type in exit end press enter.
 
 Mandatory part for the project:
 - You must program a mini UNIX command interpreter.
