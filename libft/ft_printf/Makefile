@@ -18,7 +18,7 @@ OBJ_DIR = obj/
 
 LIBFT_DIR = ../
 
-FLAGS = -c -g -Wall -Wextra -Werror
+FLAGS = -c -Wall -Wextra -Werror
 
 HEADER = includes/ft_printf.h
 

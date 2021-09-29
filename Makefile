@@ -12,7 +12,7 @@
 
 NAME = minishell
 
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror
 
 SRCS = main.c ft_shell.c ft_echo.c ft_read_until_matching_quote.c \
 	ft_save_input.c ft_check_quotation.c ft_which_quote.c ft_check_semic.c \

@@ -14,7 +14,7 @@ NAME = libft.a
 
 FT_PRINTF = libftprintf.a
 
-FLAGS = -g -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
 INCLUDES = includes/
 
