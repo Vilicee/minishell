@@ -6,7 +6,7 @@
 #    By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/08 18:25:08 by wvaara            #+#    #+#              #
-#    Updated: 2021/09/21 18:23:31 by wvaara           ###   ########.fr        #
+#    Updated: 2021/09/29 12:00:56 by wvaara           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 FT_PRINTF = libftprintf.a
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -g -Wall -Wextra -Werror
 
 INCLUDES = includes/
 

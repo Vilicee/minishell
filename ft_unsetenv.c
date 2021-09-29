@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unsetenv.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wvaara <wvaara@student.hive.fi>            +#+  +:+       +#+        */
+/*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 12:20:41 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/10 11:31:56 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/29 11:37:04 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ static void	ft_remove_env(int i, t_mini *data, char *var)
 	len = ft_arrlen(data->variables);
 	word = ft_get_next_word(var, 0);
 	temp = ft_arrdup(data->variables);
-	ft_free_array(data->variables);
+	ft_free_array(&data->variables);
 	data->variables = ft_remove_var(temp, i, len);
-	ft_free_array(temp);
+	ft_free_array(&temp);
 	free(word);
 }
 
@@ -74,5 +74,5 @@ void	ft_unsetenv(char *str, t_mini *data, int ret)
 		else
 			ft_printf("unsetenv: env: %s does not exist\n", temp[1]);
 	}
-	ft_free_array(temp);
+	ft_free_array(&temp);
 }

@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 18:06:59 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/15 15:09:39 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/29 11:36:48 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_verify_data(char **array, int i)
 			ft_putstr("setenv: too few arguments\n");
 		if (i > 4)
 			ft_putstr("setenv: too many arguments\n");
-		ft_free_array(array);
+		ft_free_array(&array);
 		return (-1);
 	}
 	while (array[1][i])
@@ -31,7 +31,7 @@ static int	ft_verify_data(char **array, int i)
 		if (array[1][i] == '=')
 		{
 			ft_printf("setenv: '=' not allowed in env name\n");
-			ft_free_array(array);
+			ft_free_array(&array);
 			return (-1);
 		}
 		i++;
@@ -48,11 +48,11 @@ static void	ft_add_variables(t_mini *data, char *new_var, char *value)
 	len = ft_arrlen(data->variables);
 	word = ft_get_next_word(value, 0);
 	temp = ft_arrdup(data->variables);
-	ft_free_array(data->variables);
+	ft_free_array(&data->variables);
 	data->variables = ft_realloc_array(temp, 1);
 	data->variables[len] = ft_strcjoin(new_var, '=', word);
 	free(word);
-	ft_free_array(temp);
+	ft_free_array(&temp);
 }
 
 static void	ft_mod_variable(int ret, char *type, char *value, t_mini *data)
@@ -108,5 +108,5 @@ void	ft_setenv(char *str, t_mini *data, int overwrite)
 	else
 		if (overwrite == 1 && data->array[2])
 			ft_mod_variable(data->ret, data->array[1], data->array[2], data);
-	ft_free_array(data->array);
+	ft_free_array(&data->array);
 }

@@ -6,7 +6,7 @@
 #    By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/14 13:28:02 by wvaara            #+#    #+#              #
-#    Updated: 2021/09/21 18:23:21 by wvaara           ###   ########.fr        #
+#    Updated: 2021/09/29 12:00:47 by wvaara           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJ_DIR = obj/
 
 LIBFT_DIR = ../
 
-FLAGS = -c -Wall -Wextra -Werror
+FLAGS = -c -g -Wall -Wextra -Werror
 
 HEADER = includes/ft_printf.h
 

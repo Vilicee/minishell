@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 18:33:14 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/13 10:32:23 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/29 11:34:33 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void				ft_putaddr_fd(void **ptr, int fd);
 void				ft_putendl(char const *str);
 void				ft_putstr(char const *str);
 void				ft_memdel(void **ap);
-void				ft_free_array(char **array);
+void				ft_free_array(char ***array);
 void				ft_strdel(char **as);
 void				ft_striter(char *str, void (*f)(char *));
 void				ft_striteri(char *str, void (*f)(unsigned int, char *));

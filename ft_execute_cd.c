@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 13:51:40 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/25 09:06:25 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/29 11:35:23 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	ft_free(t_mini *data)
 	if (data->cd_path)
 		free(data->cd_path);
 	if (data->cd_array)
-		ft_free_array(data->cd_array);
+		ft_free_array(&data->cd_array);
 }
 
 static	void	ft_set_env_vars(t_mini *data)

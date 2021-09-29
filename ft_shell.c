@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 14:40:54 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/24 21:04:26 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/09/29 11:49:36 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ int	ft_shell(t_mini *data)
 		}
 	}
 	if (data->words)
-		ft_free_array(data->words);
+		ft_free_array(&data->words);
 	data->i = 0;
 	return (-1);
 }
