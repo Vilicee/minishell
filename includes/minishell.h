@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:11:33 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/24 21:04:06 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/05 11:00:07 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,7 @@ int					ft_new_dir(char **array, t_mini *data);
 int					ft_execve(char *str, t_mini *data, char *command);
 int					ft_dollar(char *temp, int i, char c, char **variables);
 int					ft_check_quotation(char *str, int i, int ret, char c);
-int					ft_which_quote(char *str, int squote, int dquote,
-						int bquote);
+int					ft_which_quote(char *str);
 int					ft_dotdot(char *str, int i, int count);
 int					ft_dash_check(char *str);
 int					ft_check_buf(char *str, int ret, int len);

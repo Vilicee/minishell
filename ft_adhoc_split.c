@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 11:39:21 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/20 14:26:04 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/05 11:01:47 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ char	**ft_adhoc_split(char const *str, char c, int len, int i)
 {
 	char	**fresh;
 	int		wlen;
-	char	quote;
 
 	len = ft_str_count(str, c, 0, 0);
 	fresh = (char **)malloc(sizeof(char *) * (len + 1));

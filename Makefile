@@ -6,7 +6,7 @@
 #    By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/06 13:58:33 by wvaara            #+#    #+#              #
-#    Updated: 2021/09/29 11:57:40 by wvaara           ###   ########.fr        #
+#    Updated: 2021/10/05 10:58:33 by wvaara           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,7 @@ $(NAME): $(LIBRARIES) $(OBJECTS)
 $(LIBRARIES):
 	$(MAKE) -C $(LIB_DIR)
 
-$(OBJECTS): $(SRCS)
-
-$(SRCS):
+$(OBJECTS):
 	gcc -c $(FLAGS) $(SRCS)
 
 clean:

@@ -105,7 +105,9 @@ static void	ft_echo_parser_loop(t_mini *dt, char *str, char c, char *temp)
 char	*ft_echo_parser(char *str, int i, int len, t_mini *data)
 {
 	char	*temp;
-
+	
+	if (str[i - 5] == ' ')
+		i++;
 	len = ft_echo_len(str, i, data->flag, data);
 	temp = (char *)malloc(sizeof(char) * (len + 1));
 	if (temp)

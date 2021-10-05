@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 13:24:50 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/21 17:34:49 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/05 10:59:53 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_verify_quote(char *str, int i)
 	return (-1);
 }
 
-int	ft_which_quote(char *str, int squote, int dquote, int bquote)
+int	ft_which_quote(char *str)
 {
 	int	i;
 

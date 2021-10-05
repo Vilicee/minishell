@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 15:59:48 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/30 12:27:11 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/05 10:59:23 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,33 +20,6 @@ static void	ft_initialize(t_mini *data)
 	data->cd_p = '0';
 	data->cd_l = '0';
 	data->tilde = '0';
-}
-
-static void	ft_reset(t_mini *data)
-{
-	data->temp = NULL;
-	data->new_word = NULL;
-	data->old = NULL;
-	data->new = NULL;
-	data->words = NULL;
-	data->check = NULL;
-	data->env = NULL;
-	data->cd_path = NULL;
-	data->array = NULL;
-	data->cd_temp = NULL;
-	data->cd_array = NULL;
-	data->flag = 0;
-	data->e_i = 0;
-	data->ii = 0;
-	data->index = 0;
-	data->a_index = 0;
-	data->exec_fail = '0';
-	data->e_skip = 4;
-	data->ret = 0;
-	data->cd_p = '0';
-	data->cd_l = '0';
-	data->tilde = '0';
-	data->quote = ' ';
 }
 
 static void	ft_parse_input(t_mini *data)
