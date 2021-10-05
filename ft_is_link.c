@@ -6,11 +6,11 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 12:20:45 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/15 15:07:10 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/05 15:31:57 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/minishell.h"
+#include "minishell.h"
 
 char	*ft_is_link(t_mini *data, char **array, char tilde)
 {

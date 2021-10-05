@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_path.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wvaara <wvaara@student.hive.fi>            +#+  +:+       +#+        */
+/*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 13:34:48 by wvaara            #+#    #+#             */
-/*   Updated: 2021/08/30 14:04:06 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/05 15:31:57 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/minishell.h"
+#include "minishell.h"
 
 int	ft_check_path(char *str)
 {

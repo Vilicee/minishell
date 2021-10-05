@@ -6,11 +6,11 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 13:20:19 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/29 13:25:10 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/05 15:31:57 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/minishell.h"
+#include "minishell.h"
 
 static int	ft_execute(char **array, char *command, char **var, pid_t child)
 {

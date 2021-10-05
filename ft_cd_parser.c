@@ -6,11 +6,11 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 15:49:21 by wvaara            #+#    #+#             */
-/*   Updated: 2021/09/16 14:45:37 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/05 15:31:57 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/minishell.h"
+#include "minishell.h"
 
 static int	ft_cd_len(char *str, int i)
 {

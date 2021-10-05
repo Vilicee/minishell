@@ -6,11 +6,11 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 16:37:10 by wvaara            #+#    #+#             */
-/*   Updated: 2021/10/05 11:01:17 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/05 15:31:57 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/minishell.h"
+#include "minishell.h"
 
 static void	ft_prompt(int ret)
 {

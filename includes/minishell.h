@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:11:33 by wvaara            #+#    #+#             */
-/*   Updated: 2021/10/05 11:00:07 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/05 15:30:01 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ typedef struct s_mini
 	char			cd_l;
 	char			cd_p;
 	char			*buf;
-	char			*old;
-	char			*new;
+	char			*old_pwd;
+	char			*new_pwd;
 	char			*cd_path;
 	char			*check;
 	char			*temp;
