@@ -6,13 +6,13 @@
 #    By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/06 13:58:33 by wvaara            #+#    #+#              #
-#    Updated: 2021/10/06 18:31:07 by wvaara           ###   ########.fr        #
+#    Updated: 2021/10/06 19:43:35 by wvaara           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minishell
 
-FLAGS = -Wall -Wextra -Werror -fsanitize=address
+FLAGS = -Wall -Wextra -Werror
 
 SRCS = main.c ft_shell.c ft_echo.c ft_read_until_matching_quote.c \
 	ft_save_input.c ft_check_quotation.c ft_which_quote.c ft_check_semic.c \

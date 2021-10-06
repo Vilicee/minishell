@@ -6,7 +6,7 @@
 #    By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/14 13:28:02 by wvaara            #+#    #+#              #
-#    Updated: 2021/10/06 18:31:18 by wvaara           ###   ########.fr        #
+#    Updated: 2021/10/06 19:43:41 by wvaara           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJ_DIR = obj/
 
 LIBFT_DIR = ../
 
-FLAGS = -c -Wall -Wextra -Werror -fsanitize=address
+FLAGS = -c -Wall -Wextra -Werror
 
 HEADER = includes/ft_printf.h
 

@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 14:40:54 by wvaara            #+#    #+#             */
-/*   Updated: 2021/10/06 19:19:13 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/06 19:39:17 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,15 @@ static int	ft_check_for_errors(char *buf)
 	{
 		if (ft_is_quote(buf[i]) == 1 && ft_strlen(buf) > 3)
 		{
-			c = buf[i++];
-			while (buf[i] != c)
+			if ((i > 0 && buf[i - 1] != '\\') || i == 0)
 			{
-				i++;
-				if (buf[i] == c && buf[i - 1] == '\\')
+				c = buf[i++];
+				while (buf[i] != c)
+				{
 					i++;
+					if (buf[i] == c && buf[i - 1] == '\\')
+						i++;
+				}
 			}
 		}
 		if (buf[i] == ';' && buf[i + 1] == ';')

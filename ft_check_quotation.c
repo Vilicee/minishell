@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 16:39:19 by wvaara            #+#    #+#             */
-/*   Updated: 2021/10/06 18:57:05 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/06 19:36:19 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,19 @@ int	ft_check_quotation(char *str, int i, int ret, char c)
 	{
 		if (ft_is_quote(str[i]) == 1)
 		{
-			c = str[i++];
-			while (str[i] != '\0' && str[i] != c)
+			if ((i > 0 && str[i - 1] != '\\') || i == 0)
 			{
-				i++;
-				if (str[i] == c && str[i - 1] == '\\'
-					&& ft_isspace(str[i + 1]) == 1)
+				c = str[i++];
+				while (str[i] != '\0' && str[i] != c)
+				{
 					i++;
+					if (str[i] == c && str[i - 1] == '\\'
+						&& ft_isspace(str[i + 1]) == 1)
+						i++;
+				}
+				if (str[i] == '\0')
+					return (-1);
 			}
-			if (str[i] == '\0')
-				return (-1);
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 13:16:38 by wvaara            #+#    #+#             */
-/*   Updated: 2021/10/06 18:46:09 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/06 19:31:03 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ static int	ft_echo_len(char *str, int i, int flag, t_mini *data)
 
 static void	ft_echo_parser_loop(t_mini *dt, char *str, char c, char *temp)
 {
+//	ft_printf("dt->e_i = (%d)", dt->e_i);
 	while (str[dt->e_i])
 	{
 		if (ft_almost_white_space(str[dt->e_i]) == 1)
@@ -105,10 +106,7 @@ static void	ft_echo_parser_loop(t_mini *dt, char *str, char c, char *temp)
 char	*ft_echo_parser(char *str, int i, int len, t_mini *data)
 {
 	char	*temp;
-	
-//	ft_printf("str = (%s) i = (%d)", str, i);
-//	if (str[i - 5] == ' ')
-//		i++;
+
 	len = ft_echo_len(str, i, data->flag, data);
 	temp = (char *)malloc(sizeof(char) * (len + 1));
 	if (temp)
