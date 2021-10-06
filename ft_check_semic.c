@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 14:24:36 by wvaara            #+#    #+#             */
-/*   Updated: 2021/10/05 15:31:57 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/06 19:18:00 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,19 @@ int	ft_check_semic(char *str, int i, int ret)
 	char	c;
 
 	check = '0';
+	i = ft_check_start(str);
 	while (str[i])
 	{
-		if (ft_is_quote(str[i]) == 1)
+		if (ft_is_quote(str[i]) == 1 && ft_strlen(str) > 3)
 		{
 			c = str[i];
 			i++;
-			while (str[i] != '\0' && str[i] != c)
+			while (str[i] != c)
+			{
 				i++;
+				if (str[i] == c && str[i - 1] == '\\')
+					i++;
+			}
 		}
 		if (str[i] == ';')
 			ret = 1;

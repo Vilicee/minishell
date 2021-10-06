@@ -6,29 +6,17 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 16:37:10 by wvaara            #+#    #+#             */
-/*   Updated: 2021/10/05 15:31:57 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/06 19:12:46 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static void	ft_prompt(int ret)
-{
-	if (ret == 1)
-		ft_putstr("squote> ");
-	if (ret == 2)
-		ft_putstr("dquote> ");
-	if (ret == 3)
-		ft_putstr("bquote> ");
-}
-
-static char	*ft_loop(char *str, char *temp, char *temp2, int ret)
+static char	*ft_loop(char *str, char *temp, char *temp2)
 {
 	while (1)
 	{
-		if (ret == -1)
-			ret = ft_which_quote(str);
-		ft_prompt(ret);
+		write(1, "> ", 2);
 		if (temp)
 			free(temp);
 		temp = ft_save_input();
@@ -56,5 +44,5 @@ char	*ft_read_until_matching_quote(char *str)
 
 	temp = NULL;
 	temp2 = NULL;
-	return (ft_loop(str, temp, temp2, -1));
+	return (ft_loop(str, temp, temp2));
 }

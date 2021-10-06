@@ -6,7 +6,7 @@
 /*   By: wvaara <wvaara@hive.fi>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 13:16:38 by wvaara            #+#    #+#             */
-/*   Updated: 2021/10/05 15:31:57 by wvaara           ###   ########.fr       */
+/*   Updated: 2021/10/06 18:46:09 by wvaara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,9 @@ char	*ft_echo_parser(char *str, int i, int len, t_mini *data)
 {
 	char	*temp;
 	
-	if (str[i - 5] == ' ')
-		i++;
+//	ft_printf("str = (%s) i = (%d)", str, i);
+//	if (str[i - 5] == ' ')
+//		i++;
 	len = ft_echo_len(str, i, data->flag, data);
 	temp = (char *)malloc(sizeof(char) * (len + 1));
 	if (temp)
